@@ -1,0 +1,1 @@
+SELECT * FROM actividad2.peliculas;
