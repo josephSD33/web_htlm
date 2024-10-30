@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import static java.lang.System.out;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.stream.Collectors;
@@ -27,7 +26,7 @@ public class ConnApi extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         
         String apiUrl = "https://frasedeldia.azurewebsites.net/api/phrase"; 
-        response.setContentType("text/html;charset=UTF-8");
+       
         
      
         PrintWriter out = response.getWriter();
@@ -63,20 +62,12 @@ public class ConnApi extends HttpServlet {
                 out.println("</blockquote>");
                 out.println("</div>");
                 out.println("</div>");
-                out.println("<script src='https://code.jquery.com/jquery-3.5.1.slim.min.js'></script>");
-                out.println("<script src='https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js'></script>");
-                out.println("<script src='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js'></script>");
                 out.println("</body>");
                 out.println("</html>");
-            } else {
-                out.println("<div class='alert alert-danger'>Error al conectar con la API: " + conn.getResponseCode() + "</div>");
-            }
-        } catch (Exception e) {
-            out.println("<div class='alert alert-danger'>Error: " + e.getMessage() + "</div>");
-        } finally {
-            out.close();
+            } 
+            
+        } catch (Exception e) { 
         }
-        
         
     }
 
