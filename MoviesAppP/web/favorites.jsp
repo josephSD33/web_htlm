@@ -72,7 +72,7 @@
                 %>
                 <%if (!Vfav) {
                 %>
-                    <h5 class="card-title">No hay peliculas favoritas</h5>
+                    <h5 class="card-title">You don't have favorite movies saved</h5>
                 <% 
                     }
                 %>
