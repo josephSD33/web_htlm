@@ -6,9 +6,9 @@
     Connection conn = null;
     PreparedStatement stmt = null;
     ResultSet rs = null;
-    String dbUrl = "jdbc:mysql://localhost:3306/reservasdatabaseweb"; 
-    String dbUser = "root";  
-    String dbPassword = "04pollo40";  
+    String dbUrl = "jdbc:mysql://localhost:3306/reservasdatabaseweb";
+    String dbUser = "root";
+    String dbPassword = "04pollo40";
 
     if (email != null && password != null) {
         try {
@@ -30,7 +30,16 @@
                 session.setAttribute("usuarioId", usuarioId);  // Guardar el id en la sesión
                 String nombreId = rs.getString("nombre");  // Obtener el nombre
                 session.setAttribute("nombreId", nombreId);  // Guardar el nombre en la sesión
-                response.sendRedirect("newjsp.jsp");
+                String role = rs.getString("role");
+
+                if ("admin".equalsIgnoreCase(role)) {
+                    
+                    response.sendRedirect("gestionAdmins.jsp");
+                } else {
+                    
+                    response.sendRedirect("newjsp.jsp");
+                }
+
             } else {
                 // Las credenciales son incorrectas
                 out.println("<h3 style='color: red;'>Error: Usuario o contraseña incorrectos</h3>");
@@ -49,9 +58,15 @@
         } finally {
             // Cerrar recursos
             try {
-                if (rs != null) rs.close();
-                if (stmt != null) stmt.close();
-                if (conn != null) conn.close();
+                if (rs != null) {
+                    rs.close();
+                }
+                if (stmt != null) {
+                    stmt.close();
+                }
+                if (conn != null) {
+                    conn.close();
+                }
             } catch (SQLException e) {
                 e.printStackTrace();
             }
