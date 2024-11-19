@@ -48,8 +48,6 @@ public class Conector {
         statement.setString(3, fecha);
         statement.setString(4, foto);
         statement.setString(5, ubicacion);
-        
-        // Establecer las entradas disponibles
         statement.setInt(6, entradasDisponibles);
 
         statement.executeUpdate();
