@@ -19,13 +19,13 @@
 
     Conector dt = new Conector();
     String mensaje;
-    try {
+   
+
+        e.printStackTrace(); try {
 
         dt.agregarEvento(nombre, descripcion, fecha, foto, ubicacion, entradasDisponibles);
         mensaje = "Evento añadido exitosamente.";
     } catch (SQLException e) {
-
-        e.printStackTrace();
         mensaje = "Error al añadir el evento: " + e.getMessage();
     }
     dt.Close();

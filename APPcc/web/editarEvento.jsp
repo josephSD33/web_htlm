@@ -16,13 +16,13 @@
     String foto = request.getParameter("foto");
     String ubicacion = request.getParameter("ubicacion");
     int entradasDisponibles = Integer.parseInt(request.getParameter("entradas_disponibles"));
-    int totalEntradas = entradasDisponibles;
+    
 
     Conector dt = new Conector();
     String mensaje;
     try {
 
-        dt.editarEvento(id, nombre, descripcion, fecha, foto, ubicacion, totalEntradas, entradasDisponibles);
+        dt.editarEvento(id, nombre, descripcion, fecha, foto, ubicacion, entradasDisponibles);
         mensaje = "Evento añadido exitosamente.";
     } catch (SQLException e) {
 

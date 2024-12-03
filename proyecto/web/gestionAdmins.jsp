@@ -35,23 +35,21 @@
         }
         .content-container {
             width: 90%;
-            max-width: 900px;
+            max-width: 1500px;
             padding: 20px;
             background-color: white;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            margin-top: 70px;
-            ; /* Ajusta según el alto de la barra de navegación */
+            margin-top: 50px;
+            height: auto; /* Esto asegura que el contenedor se ajuste automáticamente al contenido */
+
         }
+
         table {
             width: 100%;
             border-collapse: collapse;
             margin-bottom: 40px;
             background-color: white;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        table {
-            width: 100%;
             max-width: 100%;
 
         }
@@ -59,14 +57,14 @@
             padding: 8px 12px;
             text-align: left;
             border-bottom: 1px solid #ddd;
-            font-size: 14px;
+            font-size: 20px;
         }
         th {
             background-color: #4CAF50;
             color: white;
         }
         td {
-            font-size: 14px;
+            font-size: 20px;
         }
         .no-events {
             text-align: center;
@@ -82,7 +80,8 @@
             top: 0;
             left: 0;
             z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
-            height: 40px; /* Establece la altura de la barra de navegación */
+            height: 50px; /* Establece la altura de la barra de navegación */
+            font-size: 20px;
         }
 
         nav ul {
@@ -91,15 +90,18 @@
             margin: 0;
             display: flex;
             justify-content: center;
+            font-size: 20px;
         }
         nav ul li {
             margin: 0 15px;
+            font-size: 20px;
         }
         nav ul li a {
             color: white;
             text-decoration: none;
             padding: 10px 20px;
             display: block;
+            font-size: 20px;
         }
         nav ul li a:hover {
             background-color: #4CAF50;
@@ -158,9 +160,7 @@
         <ul>
 
             <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Añadir Evento</a></li>
-
             <li><a href="login.jsp">Cerrar Sesión</a></li>
-            
         </ul>
     </nav>
 
@@ -191,7 +191,7 @@
 
         <h2>Lista de Eventos Disponibles</h2>
 
-        <div class="table-container" style="max-height: 400px; overflow-y: auto;">
+        <div class="table-container" style="max-height: 800px; overflow-y: auto;">
             <table>
                 <thead>
                     <tr>
@@ -214,9 +214,10 @@
                         <td><%= rsEventos.getString("descripcion")%></td>
                         <td><%= rsEventos.getDate("fecha")%></td>
                         <td>
-                            <div class="card" style="width: 10rem; margin-right: 2px;">
-                                <img src="<%= rsEventos.getString("foto")%>" class="card-img-top" alt="..." style="width: 100px; height: 100px; object-fit: cover;">
+                            <div class="card" style="width: 15rem; display: flex; justify-content: center; align-items: center;">
+                                <img src="<%= rsEventos.getString("foto")%>" class="card-img-top" alt="..." style="width: 150px; height: 150px; object-fit: cover;">
                             </div>
+
                         </td>
                         <td><%= rsEventos.getString("ubicacion")%></td>
                         <td><%= rsEventos.getInt("entradas_disponibles")%></td>
@@ -326,9 +327,9 @@
                         </div>
                         <div class="mb-3">
                             <label for="txtFoto" class="form-label">URL de la Foto</label>
-                            <input type="text" class="form-control" id="txtFoto" name="txtFoto" required>
+                            <input type="text" class="form-control" id="txtFoto" name="txtFoto" placeholder="http://example.com/photo.jpg" required>
                         </div>
-                        
+
                         <div class="mb-3">
                             <label for="txtFecha" class="form-label">Fecha del Evento</label>
                             <input type="date" class="form-control" id="txtFecha" name="txtFecha" required>
