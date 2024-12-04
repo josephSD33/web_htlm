@@ -22,7 +22,7 @@
             }
         </style>
         <title>JSP Page</title>
-    </head>
+    </head> 
     <body>   
 
         <%
