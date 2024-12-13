@@ -9,31 +9,32 @@ create database estudiantes;
 );
 
 INSERT INTO calificaciones (cedula,nombre,nota) VALUES 
-('108160789', 'Keylor Soto', '80');
+('108160789', 'Keylor Soto', null);
 
 INSERT INTO calificaciones (cedula, nombre, nota) VALUES 
-('108160790', 'Carlos Pérez', '55');  
+('108160790', 'Carlos Pérez', null);  
 
 INSERT INTO calificaciones (cedula, nombre, nota) VALUES 
-('108160791', 'Ana García', '68');  
+('108160791', 'Ana García', null);  
 
 INSERT INTO calificaciones (cedula, nombre, nota) VALUES 
-('108160792', 'Luis Rodríguez', '72');  
+('108160792', 'Luis Rodríguez', null);  
 
 INSERT INTO calificaciones (cedula, nombre, nota) VALUES 
-('108160793', 'Marta López', '63');  
+('108160793', 'Marta López', null);  
 
 INSERT INTO calificaciones (cedula, nombre, nota) VALUES 
-('108160794', 'José Fernández', '66');  
+('108160794', 'José Fernández', null);  
 
 INSERT INTO calificaciones (cedula, nombre, nota) VALUES 
-('108160795', 'Claudia Torres', '90'); 
+('108160795', 'Claudia Torres', null); 
 
 INSERT INTO calificaciones (cedula, nombre, nota) VALUES 
-('108160796', 'Sergio Ramírez', '60');  
+('108160796', 'Sergio Ramírez', null);  
 
 INSERT INTO calificaciones (cedula, nombre, nota) VALUES 
-('108160797', 'Patricia González', '74');  
+('108160797', 'Patricia González', null);  
 INSERT INTO calificaciones (cedula, nombre, nota) VALUES 
-('108160798', 'Juliana Castro', '67'); 
+('108160798', 'Juliana Castro', null); 
+
 
